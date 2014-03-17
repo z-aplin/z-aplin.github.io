@@ -236,30 +236,40 @@ table {
 body {
   font-size: 1em;
   line-height: 1.4;
+  color: #423f37;
   background: url("/images/white-wood.jpg");
   font-family: 'Roboto Slab', serif; }
-  /* line 10, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
+  /* line 9, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
   .no-fontface body {
     font-family: "Verdana"; }
 
-/* line 14, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
+/* line 13, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
 ul, li {
   margin: 0;
   padding: 0; }
 
-/* line 18, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
+/* line 17, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
 ::-moz-selection {
   background: red;
   text-shadow: none; }
 
-/* line 22, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
+/* line 21, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
 ::selection {
   background: red;
   text-shadow: none; }
 
-/* line 27, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
+/* line 26, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
 .headline {
   text-shadow: #863027 0.01em 0.01em 0, #863027 0.02em 0.02em 0, #863027 0.03em 0.03em 0, #863027 0.04em 0.04em 0, #863027 0.05em 0.05em 0, #863027 0.06em 0.06em 0, #863027 0.07em 0.07em 0, #863027 0.08em 0.08em 0, #863027 0.09em 0.09em 0, #863027 0.1em 0.1em 0; }
+
+/* line 35, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
+.title {
+  font-size: 1.7em;
+  text-shadow: 1px 2px 0px #cccccc; }
+
+/* line 40, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
+a {
+  border: none; }
 
 /* line 1, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_placeholders.css.scss */
 h1, h2 {
@@ -338,12 +348,13 @@ footer[role="contentinfo"] {
     float: right;
     margin-right: 0; }
   /* line 90, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_layout.css.scss */
-  .portfolio-image > img {
+  .portfolio-image > a img {
     max-width: 100%; }
 
 /* line 94, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_layout.css.scss */
 .title {
-  text-align: center; }
+  text-align: center;
+  margin: 0 auto; }
 
 /*.circle-image {
     display: inline-block;
@@ -387,19 +398,233 @@ h1 {
   }*/
 /* line 46, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_modules.css.scss */
 h2 {
-  margin: 0 auto;
+  margin: 10px 0 0 0;
   font-weight: 500;
   line-height: 1em;
   text-align: center;
   background-color: aquamarine;
   letter-spacing: 0.2em;
-  padding: 10px 0 10px 5px;
-  color: white; }
+  padding: 15px 0 15px 0px;
+  color: #899699; }
 
-/* line 59, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_modules.css.scss */
+/* line 58, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_modules.css.scss */
 .hover :hover {
   transform: rotateY(180deg); }
 
-/* line 63, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_modules.css.scss */
+/* line 62, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_modules.css.scss */
 .portfolio-image {
   list-style-type: none; }
+
+/* line 7, ../sass/lightbox.sass */
+/* line 3, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+body:after {
+  content: url(../images/close.png) url(../images/loading.gif) url(../images/prev.png) url(../images/next.png);
+  display: none; }
+
+/* line 11, ../sass/lightbox.sass */
+/* line 9, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lightboxOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: black;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+  display: none; }
+
+/* line 20, ../sass/lightbox.sass */
+/* line 21, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lightbox {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  text-align: center;
+  line-height: 0;
+  font-weight: normal; }
+
+/* line 28, ../sass/lightbox.sass */
+/* line 31, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lightbox .lb-image {
+  display: block;
+  height: auto;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px; }
+
+/* line 32, ../sass/lightbox.sass */
+/* line 41, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lightbox a img {
+  border: none; }
+
+/* line 35, ../sass/lightbox.sass */
+/* line 46, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lb-outerContainer {
+  position: relative;
+  background-color: white;
+  *zoom: 1;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px; }
+
+/* line 38, ../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 60, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lb-outerContainer:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/* line 44, ../sass/lightbox.sass */
+/* line 67, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lb-container {
+  padding: 4px; }
+
+/* line 47, ../sass/lightbox.sass */
+/* line 72, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lb-loader {
+  position: absolute;
+  top: 43%;
+  left: 0%;
+  height: 25%;
+  width: 100%;
+  text-align: center;
+  line-height: 0; }
+
+/* line 56, ../sass/lightbox.sass */
+/* line 83, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lb-cancel {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  background: url(../images/loading.gif) no-repeat; }
+
+/* line 63, ../sass/lightbox.sass */
+/* line 92, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lb-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10; }
+
+/* line 71, ../sass/lightbox.sass */
+/* line 102, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lb-container > .nav {
+  left: 0; }
+
+/* line 74, ../sass/lightbox.sass */
+/* line 107, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lb-nav a {
+  outline: none; }
+
+/* line 77, ../sass/lightbox.sass */
+/* line 112, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lb-prev, .lb-next {
+  width: 49%;
+  height: 100%;
+  cursor: pointer;
+  /* Trick IE into showing hover */
+  display: block; }
+
+/* line 84, ../sass/lightbox.sass */
+/* line 121, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lb-prev {
+  left: 0;
+  float: left; }
+
+/* line 87, ../sass/lightbox.sass */
+/* line 126, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lb-prev:hover {
+  background: url(../images/prev.png) left 48% no-repeat; }
+
+/* line 90, ../sass/lightbox.sass */
+/* line 131, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lb-next {
+  right: 0;
+  float: right; }
+
+/* line 93, ../sass/lightbox.sass */
+/* line 136, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lb-next:hover {
+  background: url(../images/next.png) right 48% no-repeat; }
+
+/* line 96, ../sass/lightbox.sass */
+/* line 141, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lb-dataContainer {
+  margin: 0 auto;
+  padding-top: 5px;
+  *zoom: 1;
+  width: 100%;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px; }
+
+/* line 38, ../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 154, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lb-dataContainer:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/* line 103, ../sass/lightbox.sass */
+/* line 161, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lb-data {
+  padding: 0 4px;
+  color: #bbbbbb; }
+
+/* line 106, ../sass/lightbox.sass */
+/* line 166, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lb-data .lb-details {
+  width: 85%;
+  float: left;
+  text-align: left;
+  line-height: 1.1em; }
+
+/* line 111, ../sass/lightbox.sass */
+/* line 173, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lb-data .lb-caption {
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1em; }
+
+/* line 115, ../sass/lightbox.sass */
+/* line 179, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lb-data .lb-number {
+  display: block;
+  clear: left;
+  padding-bottom: 1em;
+  font-size: 12px;
+  color: #999999; }
+
+/* line 121, ../sass/lightbox.sass */
+/* line 187, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lb-data .lb-close {
+  display: block;
+  float: right;
+  width: 30px;
+  height: 30px;
+  background: url(../images/close.png) top right no-repeat;
+  text-align: right;
+  outline: none;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7; }
+
+/* line 130, ../sass/lightbox.sass */
+/* line 199, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_lightbox.css.scss */
+.lb-data .lb-close:hover {
+  cursor: pointer;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1; }
