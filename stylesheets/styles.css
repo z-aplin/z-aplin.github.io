@@ -233,41 +233,59 @@ table {
   border-spacing: 0; }
 
 /* line 1, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
-body {
+body, h1, h2, h3, h4, h5, h6 {
+  font-size-adjust: 0.5; }
+
+/* Body Content */
+/* line 7, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
+#page {
   font-size: 1em;
-  line-height: 1.4;
+  /* equivalent to 16px */
+  line-height: 1.25;
+  /* equivalent to 20px */ }
+
+@media (min-width: 43.75em) {
+  /* line 15, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
+  #page {
+    font-size: 1em;
+    /* equivalent to 16px */
+    line-height: 1.375;
+    /* equivalent to 22px */ } }
+/* line 22, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
+body {
+  font-size: 100%;
   color: #423f37;
   background: url("/images/white-wood.jpg");
   font-family: 'Roboto Slab', serif; }
-  /* line 9, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
+  /* line 30, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
   .no-fontface body {
     font-family: "Verdana"; }
 
-/* line 13, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
+/* line 34, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
 ul, li {
   margin: 0;
   padding: 0; }
 
-/* line 17, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
+/* line 38, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
 ::-moz-selection {
   background: red;
   text-shadow: none; }
 
-/* line 21, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
+/* line 42, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
 ::selection {
   background: red;
   text-shadow: none; }
 
-/* line 26, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
+/* line 47, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
 .headline {
   text-shadow: #863027 0.01em 0.01em 0, #863027 0.02em 0.02em 0, #863027 0.03em 0.03em 0, #863027 0.04em 0.04em 0, #863027 0.05em 0.05em 0, #863027 0.06em 0.06em 0, #863027 0.07em 0.07em 0, #863027 0.08em 0.08em 0, #863027 0.09em 0.09em 0, #863027 0.1em 0.1em 0; }
 
-/* line 35, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
+/* line 56, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
 .title {
   font-size: 1.7em;
   text-shadow: 1px 2px 0px #cccccc; }
 
-/* line 40, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
+/* line 61, C:/Users/Nilpa/Web Development/zane/source/stylesheets/partials/_base.css.scss */
 a {
   border: none; }
 
