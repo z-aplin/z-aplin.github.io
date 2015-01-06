@@ -1,86 +1,49 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    
-    <!-- Always force latest IE rendering engine or request Chrome Frame -->
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    
-    <title>Zane Aplin</title>
-    <link href="stylesheets/styles.css" rel="stylesheet" type="text/css" />
-    <script src="javascripts/modernizr.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script src="javascripts/jquery.fittext.js"></script>
-    <script src="javascripts/lightbox-2.6.min.js"></script>
+<html lang=en>
+    <head>
+        <meta charset=utf-8>
+        <meta http-equiv=X-UA-Compatible content="IE=edge">
+        <meta name=theme-color content=#F44336>
+        <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name=description content="Hi, I'm Zane. I'm a Web Developer in New Zealand.">
+        <title>Zane Aplin</title>
+        <meta name=mobile-web-app-capable content=yes>
+        <link rel=icon sizes=192x192 href=chrome-touch-icon-192x192.png>
+        <meta name=apple-mobile-web-app-capable content=yes>
+        <meta name=apple-mobile-web-app-status-bar-style content=black>
+        <meta name=apple-mobile-web-app-title content="Zane Aplin">
+        <link rel=apple-touch-icon-precomposed href=apple-touch-icon-precomposed.png>
+        <link rel=author href=https://plus.google.com/+ZaneAplin>
+        <link rel=stylesheet href="http://fonts.googleapis.com/css?family=Alegreya:400,400italic,700,700italic">
+        <link rel=stylesheet href=/styles/main.css>
     </head>
-  
-  <body class="index">
-        <div class="inner-body">
-        <header>
-            <h3 class="title">Hi I'm</h3>
-            <h1>
-                <span>Z</span>
-                <span>A</span>
-                <span>N</span>
-                <span>E</span>
-                <span></span>
-                <span class="alt">A</span>
-                <span class="alt">P</span>
-                <span class="alt">L</span>
-                <span class="alt">I</span>
-                <span class="alt">N</span>
-            </h1>
-            <h3 class="title">a</h3>
-            <h2>Front End Developer and Android aficionado</h2>
-
-        </header>
-        
-            <section role="main" class="main-content">
-                <div class="inner-content">
-            
-                <h3>Design Portfolio</h3>
-                
-                <h4>Palmerston North Travel Booklet</h4>
-                
-                <p>A project to create a brochure for the Palmerston North travel sector.</p>
-               
-                <ul class="portfolio-wrapper">
-                    <li class="portfolio-image"><a href="images/portfolio-example-1.png" data-lightbox="portfolio" title="My caption"><img src="images/portfolio-example-1.png" /></a></li>
-                     <li class="portfolio-image"><a href="images/portfolio-example-2.png" data-lightbox="portfolio" title="My caption"><img src="images/portfolio-example-2.png" /></a></li>
-                     <li class="portfolio-image"><a href="images/portfolio-example-3.png" data-lightbox="portfolio" title="My caption"><img src="images/portfolio-example-3.png" /></a></li>
-                     <li class="portfolio-image"><a href="images/portfolio-example-4.png" data-lightbox="portfolio" title="My caption"><img src="images/portfolio-example-4.png" /></a></li>
-                </ul>
-                
-                 </div>
-                </section>     
-      
-        <footer role="contentinfo">
-            <div class="inner-footer">
-                <p class="copyright">&copy; Zane Aplin, 2014. All rights reserved.</p>
+    <body>
+        <div class=top></div>
+        <div class=content-container>
+            <div class=content>
+                <div class=avatar></div>
+                <p>Hi, I’m Zane.</p>
+                <p>I’m a Web Developer in New Zealand.</p>
+                <p>I do a lot of Web stuff and Android development on the side.</p>
+                <div class=icons>
+                    <a rel=me href=https://twitter.com/z_aplin class=twitter></a> 
+                    <a rel=me href=https://plus.google.com/+ZaneAplin/posts class=googleplus></a> 
+                    <a rel=me class="email obfuscated" data-email="zaneaplin gmail com"></a>
+                </div>
             </div>
-
-<!-- Place this code where you want the badge to render. -->
-<a href="//plus.google.com/u/0/112982346310925122345?prsrc=3"
-   rel="publisher" target="_top" style="text-decoration:none;">
-<img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;"/>
-</a>
-
-        </footer>
-    </div>
-
-    <script>
-        jQuery("h1").fitText(0.873);
-        jQuery("h2").fitText(2.873);
+        </div>
+        <div class=bottom></div>
+        <script>
+     (function() {
+        var emailNode = document.querySelector('.email.obfuscated');
+        if (emailNode.dataset) {
+          var obfuscated = emailNode.dataset.email;
+          emailNode.setAttribute('href', 'mailto:' + obfuscated
+                .replace(/ /, "@")
+                .replace(/ /, "."));
+          console.log(obfuscated);
+        }
+      })();
     </script>
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-49096313-1', 'zaneaplin.me');
-  ga('send', 'pageview');
-
-</script>
-  </body>
+    </body>
 </html>
